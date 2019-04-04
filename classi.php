@@ -12,7 +12,6 @@ $id_istituto = $_GET['id_istituto'];
 
 $result = $db->query("SELECT * FROM classi WHERE id_istituto = '$id_istituto'");
 $classi = $result->fetchAll(PDO::FETCH_ASSOC);
-//print_r($classi);
 
 echo json_encode($classi);
 
