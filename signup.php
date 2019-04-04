@@ -18,7 +18,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>AppuntiAmici</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -46,7 +46,7 @@
           	<input type="submit" name="submit" value="registrazione">
         </form>
         <form action="index.php">
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
           <h3>OPPURE</h3>
           <div align="center">
             <input type="submit" value="Accedi"/>
