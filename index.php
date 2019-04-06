@@ -12,7 +12,7 @@
 			<div class="navbar-brand">
 				<a class="navbar-item">
 					<!-- LOGO -->
-					<img src="" alt="Logo">
+					<img src="img/Logo_Completo.png" alt="Logo">
 				</a>
 				<span class="navbar-burger burger" data-target="navbarMenuHeroA">
             	<span></span>
