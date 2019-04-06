@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html>
-	<head>	
-		<title>AppuntiAmici</title>	
-		<link href="https://stackpath.bootstrapcdn.com/	bootstrap/4.3.1/css/	bootstrap.min.css" rel="stylesheet" integrity="	sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 	crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-	</head>
-	<body>
-		<div id="login-box" align="center">
-        
-        <form class="box" action="login.php" method="POST">
-            <div class="TopText">
-              <h1>Login</h1>
-            </div><br><br><br>
-          <input type="email" name="email" placeholder="Email"/>
-          <input type="password" name="password" placeholder="Password"/>
-          <input type="submit" value="entra"/>
-        </form>
-        <form action="signup.php">
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-          <h3>OPPURE</h3>
-          <div align="center">
-            <input type="submit" value="Registrati"/>
-          </div>
-        </form>
-    </div>
-	</body>
+<head>
+	<title>AppuntiAmici</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css" integrity="sha256-aan9tQnm7lVach/6JxYyrQRlheajRD+UBDwwWo3tAHQ=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+	<div class="hero is-info is-medium">
+		<!-- inizio della navbar -->
+		<div class="hero-head">
+			<div class="navbar-brand">
+				<a class="navbar-item">
+					<!-- LOGO -->
+					<img src="" alt="Logo">
+				</a>
+				<span class="navbar-burger burger" data-target="navbarMenuHeroA">
+            	<span></span>
+            	<span></span>
+            	<span></span>
+          		</span>
+			</div>
+			<div id="navbarMenuHeroA" class="navbar-menu">
+				<div class="navbar-end">
+					<a class="navbar-item">
+						Home
+					</a>
+					<a class="navbar-item">
+						Contatti
+					</a>
+					<input class="input" type="text" name="search" placeholder="Cerca" />
+				</div>
+				<!-- Utente -->
+				<!--<a class="navbar-item"><?php  ?></a>-->
+			</div>
+		</div>
+		<!-- Fine Navbar -->
+
+
+		<!-- Inizio contenuto Body -->
+		<div class="hero-body">
+			
+		</div>
+		<!-- Fine contenuto Body -->
+	</div>
+
+</body>
 </html>
