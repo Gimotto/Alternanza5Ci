@@ -11,15 +11,17 @@
 
 	$result=$db->query("SELECT * FROM istituti");
 	$istituti=$result->fetchAll(PDO::FETCH_ASSOC);
-	echo "<pre>";
-	print_r($istituti);
-	echo "</pre>";
  ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>AppuntiAmici</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- CDN BULMA -->
+	<style type="text/css">
+        #Errore{
+            display: none;
+        }  
+    </style>
 </head>
 <body>
 	<div id="login-box" align="center" style="height: 600px;">
@@ -41,9 +43,24 @@
             </select>
             <select id="classi" name="id_classe">
             </select>
-          	<input type="email" name="email" placeholder="Email"/>
-          	<input type="password" name="password" placeholder="Password"/>
-          	<input type="submit" name="submit" value="registrazione">
+          	<input id="email" type="email" name="email" placeholder="Email"/>
+          	<input id="password" type="password" name="password" placeholder="Password" onkeyup="ParametriPassword();"/><br>
+            <div id="Errore">
+                <article class="message is-danger">    
+                    <div class="message-header">
+                        <p>Rispettare i seguenti parametri:</p>
+                    </div>
+                    <div class="message-body">
+                        <ul>
+                            <li>Almeno una lettera maiuscola</li>
+                            <li>Almeno una lettera minuscola</li>
+                            <li>Almeno un numero</li>
+                            <li>Almeno un carattere speciale</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+          	<input id="registrazione" type="submit" name="submit" value="registrazione">
         </form>
         <form action="index.php">
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -99,7 +116,56 @@
             cercaClassi(id_istituto)
         }
 
+        //da controllare
+        function ParametriPassword(){
+            var passwd = document.getElementById('password');
+            var errore = document.getElementById('Errore');
+            var bottone = document.getElementById('Registrazione');
+
+            if(passwd.value.length < 8){
+                errore.style.display="block";
+                bottone.disabled=true;
+            } else if (passwd.value.length > 32) {
+                errore.style.display="block";
+                bottone.disabled=true;
+            } else if (passwd.value.search(/\d/) == -1) {
+                errore.style.display="block";
+                bottone.disabled=true;
+            } else if (passwd.value.search(/[a-zA-Z]/) == -1) {
+                errore.style.display="block";
+                bottone.disabled=true;
+            } else if (passwd.value.search(/[^a-zA-Z0-9\!\@\#\$\%\^\&\*\(\)\_\+]/) != -1) {
+                errore.style.display="block";
+                bottone.disabled=true;
+            } else {
+                errore.style.display="none";
+                bottone.disabled=false;
+            }   
+        }
+
+
     	$(document).ready(function(){
+
+            $('#email').blur(function(){
+                var email=$(this).val();
+
+                $.ajax({
+                    url:'controllo.php',
+                    method:"POST",
+                    data:{email:email},
+                    success:function(data){
+                        if (data=='0') {
+                            $('#disponibilita').html('<span>Email non ancora registrata</span>');
+                            $('#registrazione').attr("disabled",false);
+                        } else {
+                            $('#disponibilita').html('<span>Email già registrata</span>');
+                            $('#registrazione').attr("disabled",true);
+                        }
+                    }
+                })
+            });
+
+
 
             console.log('pagina caricata correttamente..')
     	})
