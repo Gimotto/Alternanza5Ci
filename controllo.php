@@ -1,15 +1,9 @@
 <?php 
-
-	$hostname = "localhost";
-	$dbname = "alternanza5ci";
-	$user = "root";
-	$pass = "";
-	$db = new PDO ("mysql:host=$hostname;dbname=$dbname", $user, $pass);
-	if (!$db) {die ("Impossibile collegarsi al database");}
-
-	$email=$_POST['email'];
-
-	$query="SELECT * FROM utenti WHERE email='$email'";
-	$row=$db->query($query);
-	echo $row;
+	$connessione=mysqli_connect('localhost','root','','alternanza5ci');
+	if (isset($_POST['email'])) {
+		$email=mysqli_real_escape_string($connessione,$_POST['email']);
+		$query="SELECT * FROM utenti WHERE email='".$email."'";
+		$result=mysqli_query($connessione,$query);
+		echo mysqli_num_rows($result);
+	}
 ?>
