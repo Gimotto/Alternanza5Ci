@@ -62,7 +62,7 @@
                         <a href="#" class="button is-success navbar-item" style="position:static;margin-top:30px;margin-bottom:10px; margin-right:10px;margin-left:5px;"><i class="fa fa-swatchbook"></i>-Materie</a>
                         <p class="navbar-item"></p>
                         <a href="signup.php" class="button is-danger is-outlined navbar-item" style="position:static;margin-top:30px;margin-bottom:10px; margin-right:5px;margin-left:10px;">Registrati</a>
-                        <a href="signup.php" class="button is-danger navbar-item" style="position:static;margin-top:30px;margin-bottom:10px; margin-right:5px;margin-left:10px;">Accedi</a>
+                        <a href="login.php" class="button is-danger navbar-item" style="position:static;margin-top:30px;margin-bottom:10px; margin-right:5px;margin-left:10px;">Accedi</a>
                     </div>
                     <!-- Utente -->
                     <!--<a class="navbar-item"><?php  ?></a>-->
