@@ -224,10 +224,12 @@
                     data:{email:email},
                     success:function(data){
                         if (data=='0') {
-                            $('#disponibilita').html('<span id="disponibilita" class="icon is-small is-right"><i class="fas fa-check-circle"></i></span>');
+                            $('#disponibilita').html('<span id="disponibilita" class="icon is-small is-right"><i class="fas fa-check-circle" style="color:green"></i></span>');
+                            $('#email').attr("class",'input is-success');
                             $(bottone).attr("disabled",false);
                         } else {
-                            $('#disponibilita').html('<span id="disponibilita" class="icon is-small is-right"><i class="fas fa-exclamation-circle"></i></span>');
+                            $('#disponibilita').html('<span id="disponibilita" class="icon is-small is-right"><i class="fas fa-exclamation-circle" style="color:red"></i></span>');
+                            $('#email').attr("class",'input is-danger');
                             $(bottone).attr("disabled",true);
                         }
                     }
